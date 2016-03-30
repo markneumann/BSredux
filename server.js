@@ -1,4 +1,4 @@
-// server.js
+// server.js  for the BSredux project
 
 // set up ======================================================================
 // get all the tools we need
