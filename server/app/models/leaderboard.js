@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var LeaderBoardSchema = new mongoose.Schema({
     //define schema here
     winner: String,
-    looser: String,
+    loser: String,
     ships_left: Number
 }, { timestamps: {createdAt: 'created_at'}
 });

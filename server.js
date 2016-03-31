@@ -3,9 +3,12 @@
 // set up ======================================================================
 // get all the tools we need
 var express  = require('express');
+var path = require('path');
 var app      = express();
 var port     = process.env.PORT || 8080;
-var mongoose = require('mongoose');
+//var mongoose = require('mongoose');
+require('./server/config/mongoose.js'); // load the CD general purpose mongoose
+
 var passport = require('passport');
 var flash    = require('connect-flash');
 
@@ -14,10 +17,10 @@ var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
 
-var configDB = require('./server/config/database.js');
+//var configDB = require('./server/config/database.js'); //REPLACED by CD mongoose
 
 // configuration ===============================================================
-mongoose.connect(configDB.url); // connect to our database
+//mongoose.connect(configDB.url); // connect to our database  REPLACED IN CD Mongoose
 
 require('./server/config/passport')(passport); // pass passport for configuration
 

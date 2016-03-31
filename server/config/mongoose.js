@@ -11,7 +11,7 @@ var mongoose      = require('mongoose'),
 /*
 *  Dir where our models are located
 */
-    models_path   = path.join( __dirname, "../models"),
+    models_path   = path.join( __dirname, "../app/models"),
 /*
 *   Regular expression that checks for .js extension
 */
@@ -19,8 +19,8 @@ var mongoose      = require('mongoose'),
 /*
 *  database information
 */
-    dbURI         = 'mongodb://localhost/Survey';
-
+    dbURI         = 'mongodb://localhost/BSredux';
+console.log('models_path = ',models_path);
 /*
 * Connect to the database
 */
