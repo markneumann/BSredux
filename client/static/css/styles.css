@@ -1,1 +1,86 @@
-/*placeholder*/
+body {
+	margin: 0;
+	padding: 0;
+	display:block;
+	background-color: #27556C;
+	color: #919293;
+}
+nav {
+	background: #002E45;
+}
+.logout a {
+	margin: 20px;
+	text-decoration: none;
+	color: #919293;
+}
+a:hover {
+	color: #56727F;
+}
+.navbar-brand  {
+	font-family: 'Teko', sans-serif;
+
+}
+.logo {
+	color: #56727F;
+	text-shadow: 2px 2px #919293;
+	font-size: 50px;
+	font-weight: 600;
+}
+.main {
+	margin: 0 auto;
+}
+.left_player-board {
+	margin: 20px;
+	width: 450px;
+	height: 450px;
+	background: #002E45;
+	display: inline-block;
+}
+.right_player-board {
+	margin: 20px;
+	width: 450px;
+	height: 450px;
+	background: #002E45;
+	display: inline-block;
+}
+.chat {
+	min-width: 200px;
+	height: 450px;
+	margin: 20px;
+	background: #919293;
+	display: inline-block;
+}
+#gameboardOne,
+#gameboardTwo {
+	position:relative;
+	margin:0 auto 2em auto;
+	width:450px;
+	height:450px;
+}
+
+#gameboardOne div,
+#gameboardTwo div {
+	position:absolute;
+	-webkit-box-sizing: border-box; /* Safari 3.0 - 5.0, Chrome 1 - 9, Android 2.1 - 3.x */
+	-moz-box-sizing: border-box;    /* Firefox 1 - 28 */
+	box-sizing: border-box;         /* Safari 5.1+, Chrome 10+, Firefox 29+, Opera 7+, IE 8+, Android 4.0+, iOS any */
+	background: #f6f8f9; /* Old browsers */
+	border: 1px solid #ddd;
+	width:45px;
+	height:45px;
+}
+.cell {
+	width:45px;
+	height: 45px;
+	border: 1px black solid;
+
+}
+#circle {
+	width: 100px;
+	height: 100px;
+	background: red;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+	z-index: -1;
+}
