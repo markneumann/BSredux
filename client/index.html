@@ -9,7 +9,7 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<link href='https://fonts.googleapis.com/css?family=Teko:400,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="static/css/styles.css" media="screen" title="no title" charset="utf-8">
-		</script>
+		<script type="text/javascript" src="cell.js"></script>
 	</head>
 	<body>
 		<div class="container-fluid">
@@ -24,11 +24,16 @@
 				</div>
 			</nav>
 			<div class="main">
-				<div class="left_player-board col-md-5-left">
-					<div id="gameboardTwo">
-
-					</div>
-
+				<div class="left_player-board col-md-5-left" ng-app="mapApp" ng-controller="editorController">
+					<table>
+						<tbody>
+							<tr ng-repeat="row in cells track by $index">
+								<td ng-repeat="cell in row track by $index">
+									{{cell}}
+								</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 				<div class="chat col-mid-2">
 
