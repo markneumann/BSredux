@@ -15,6 +15,6 @@ var BoardStateSchema = new mongoose.Schema({
 
 //NameSchema.path('name').required(true, 'Name cannot be blank');
 
-mongoose.model('boardstate', BoardStateSchema);
+mongoose.model('boardstates', BoardStateSchema);
 
 console.log("exit boardstate model");
