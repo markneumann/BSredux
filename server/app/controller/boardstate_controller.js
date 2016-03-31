@@ -12,10 +12,9 @@ module.exports = (function() {
         // Also to-do, change this to a promise like the other methods
         show:  function(req, res){
             console.log("--> show path, req = ", req.params);
-            // search for field combined of username1 + vs + username2
+            // search for field combined of username1 + vs + username2 and board num
             console.log('ava =', req.params.ava);
             BoardState.find({"ava": req.params.ava, "whichBoard": req.params.whichBoard}, function(err, theboard) {
-            // BoardState.find({}, function(err, theboard) {
                 if(err) {
                     console.log(err);
                     //res.render('errors', {title: 'you have errors!', errors: boardstate.err});
@@ -28,33 +27,49 @@ module.exports = (function() {
 
         new_board: function(req, res) {
             console.log("--> new board path");
-            console.log("req.body =", req.body);
-            // var newBoard = new BoardState({
-            //     ava:     req.body.ava,
-            //     whichBoard: req.body.whichBoard,
-            //     x:  req.body.x,
-            //     y:  req.body.y,
-            //     occupant:  req.body.occupant
-            // });
-            var newBoard = new BoardState({
-                ava:     "stevevsgeano",
-                whichBoard: 1,
-                x:  "a",
-                y:  "1",
-                occupant:  0
-            });
-            console.log('newBoard =', newBoard);
-            newBoard.save()
-            .then(function() {
-                console.log("//////// 200");
+            console.log("req.body =", req.params);
+            // request contains the ava and board Number
+            // Then do a for loop for 1 to 10 rows
+            //    containing a for loop to create 10 cells for the rows
+            newAva = req.params.ava;
+            newWhichBoard = req.params.whichBoard;
+            var x = '';
+            var y = '';
+            var colVal = ["a","b","c","d","e","f","g","h","i","j"];
+            var boardDone = true;
+            var breakOut = false;
+            for (var row = 0; row<10; row++) {
+                x = colVal[row];
+                for ( col = 1; col<=10; col++) {
+                    y =col;
+                    // save the record
+                    var newCell = new BoardState({
+                        ava:        newAva,
+                        whichBoard: newWhichBoard,
+                        x:          x,
+                        y:          y,
+                        occupant:   0
+                    });
+                    console.log('newCell =', newCell);
+                    newCell.save()
+                    .then(console.log("==== cell done" + x + ", "+y))
+                    .catch(function(err){
+                        boardDone = false;
+                        breakOut = true;
+                    });
+                    if (breakOut) break;
+                } // end row
+            } //end boardDone
+
+            if (boardDone){
+                console.log("return 200");
                 res.status(200); // send back http 200 status if successful
-                res.json(newBoard);
-            })
-            .catch (function(err){
+                res.json({success:'true'});
+            } else {
                 console.log(err);
                 res.status(500); // send back http 200 status if successful
                 res.json({error: err});
-            });
+            }
         },
 
         //  Edit BoardState updates the occupant value at two times,
