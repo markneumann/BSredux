@@ -1,29 +1,38 @@
 // set grid rows and columns and the size of each square
 var rows = 10;
 var cols = 10;
-var squareSize = 50;
+var squareGbOneSize = 50;
+var squareGbTwoSize = 50;
 
 // get the container element
-var gameBoardContainer = document.getElementById("gameboard");
+var gameBoardOneContainer = document.getElementById("gameboardOne");
+var gameBoardTwoContainer = document.getElementById("gameboardTwo");
 
 // make the grid columns and rows
 for (i = 0; i < cols; i++) {
 	for (j = 0; j < rows; j++) {
 
 		// create a new div HTML element for each grid square and make it the right size
-		var square = document.createElement("div");
-		gameBoardContainer.appendChild(square);
+		var squareGbOne = document.createElement("div");
+		var squareGbTwo = document.createElement("div");
+		gameBoardOneContainer.appendChild(squareGbOne);
+		gameBoardTwoContainer.appendChild(squareGbTwo);
 
     // give each div element a unique id based on its row and column, like "s00"
-		square.id = 's' + j + i;
+		squareGbOne.id = 's' + j + i;
+		squareGbTwo.id = 'g' + j + i;
 
 		// set each grid square's coordinates: multiples of the current row or column number
-		var topPosition = j * squareSize;
-		var leftPosition = i * squareSize;
+		var topPosition = j * squareGbOneSize;
+		var leftPosition = i * squareGbOneSize;
+		var topPosition = j * squareGbTwoSize;
+		var leftPosition = i * squareGbTwoSize;
 
 		// use CSS absolute positioning to place each grid square on the page
-		square.style.top = topPosition + 'px';
-		square.style.left = leftPosition + 'px';
+		squareGbOne.style.top = topPosition + 'px';
+		squareGbOne.style.left = leftPosition + 'px';
+		squareGbTwo.style.top = topPosition + 'px';
+		squareGbTwo.style.left = leftPosition + 'px';
 	}
 }
 
@@ -56,7 +65,8 @@ var gameBoard = [
 				]
 
 // set event listener for all elements in gameboard, run fireTorpedo function when square is clicked
-gameBoardContainer.addEventListener("click", fireTorpedo, false);
+gameBoardOneContainer.addEventListener("click", fireTorpedo, false);
+gameBoardTwoContainer.addEventListener("click", fireTorpedo, false);
 
 // initial code via http://www.kirupa.com/html5/handling_events_for_many_elements.htm:
 function fireTorpedo(e) {
