@@ -7,6 +7,7 @@ module.exports = function(app, passport) {
     // Battleship routes ===========================================================
 
     app.get('/boardstate/:ava', BoardState.show); //Return the records defining a board
+    app.get('/boardstate', BoardState.new_board); //Save a new board
     // app.post('/boardstate', BoardState.new_board); //Save a new board
     // app.post('/boardstate/edit/:id, BoardState.edit_board'); //update coordinates
     // app.post('/boardstate/remove/:id, BoardState.remove_board'); //delete board at end of game
