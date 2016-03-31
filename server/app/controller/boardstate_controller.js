@@ -1,7 +1,7 @@
 // BoardState Controller
 console.log("loading boardstate_controller");
 var mongoose = require('mongoose');
-var BoardStates = mongoose.model('boardstates');
+var BoardState = mongoose.model('boardstates');
 var catch_errors = function(err){
     res.json({error:err});
 };
@@ -12,10 +12,10 @@ module.exports = (function() {
             //console.log(req.params);
             // search for field combined of username1 + vs + username2
             //admiralVsadmiral = {"ava": req.params.ava};
-            console.log('BoardStateSchema = ', BoardStates);
+            // console.log('BoardStateSchema = ', BoardState);
             console.log('ava =', req.params.ava);
         //    BoardState.find({"ava": req.params.ava}, function(err, theboard) {
-            BoardStates.find({}, function(err, theboard) {
+            BoardState.find({}, function(err, theboard) {
                 if(err) {
                     console.log(err);
                     //res.render('errors', {title: 'you have errors!', errors: boardstate.err});
@@ -26,28 +26,36 @@ module.exports = (function() {
             });
         },
 
-        // new_board: function(req, res) {
-        //     console.log("--> new board path");
-        //     console.log("req.body =", req.body);
-        //     var newBoard = new BoardState({
-        //         ava:     req.body.ava,
-        //         whichBoard: req.body.whichBoard,
-        //         x:  req.body.x,
-        //         y:  req.body.y,
-        //         occupant:  req.body.occupant
-        //     });
-        //     newBoardState.save()
-        //     .then(function() {
-        //         console.log("return 200");
-        //         res.status(200); // send back http 200 status if successful
-        //         res.json(newBoardState);
-        //     })
-        //     .catch (function(err){
-        //         console.log(err);
-        //         res.status(500); // send back http 200 status if successful
-        //         res.json({error: err});
-        //     });
-        // },
+        new_board: function(req, res) {
+            console.log("--> new board path");
+            console.log("req.body =", req.body);
+            // var newBoard = new BoardState({
+            //     ava:     req.body.ava,
+            //     whichBoard: req.body.whichBoard,
+            //     x:  req.body.x,
+            //     y:  req.body.y,
+            //     occupant:  req.body.occupant
+            // });
+            var newBoard = new BoardState({
+                ava:     "stevevsgeano",
+                whichBoard: 1,
+                x:  "a",
+                y:  "1",
+                occupant:  0
+            });
+            console.log('newBoard =', newBoard);
+            newBoard.save()
+            .then(function() {
+                console.log("//////// 200");
+                res.status(200); // send back http 200 status if successful
+                res.json(newBoard);
+            })
+            .catch (function(err){
+                console.log(err);
+                res.status(500); // send back http 200 status if successful
+                res.json({error: err});
+            });
+        },
 
         //  Edit BoardState updates the occupant value at two times,
         //  When ships are placed on the board (set to ship value), and
