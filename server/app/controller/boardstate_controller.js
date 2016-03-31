@@ -7,20 +7,20 @@ var catch_errors = function(err){
 };
 module.exports = (function() {
     return {
+        // User this to return a board for a game
+        // Currently, this returns all boards for a game
+        // Also to-do, change this to a promise like the other methods
         show:  function(req, res){
-            console.log("--> show path");
-            //console.log(req.params);
+            console.log("--> show path, req = ", req.params);
             // search for field combined of username1 + vs + username2
-            //admiralVsadmiral = {"ava": req.params.ava};
-            // console.log('BoardStateSchema = ', BoardState);
             console.log('ava =', req.params.ava);
-        //    BoardState.find({"ava": req.params.ava}, function(err, theboard) {
-            BoardState.find({}, function(err, theboard) {
+            BoardState.find({"ava": req.params.ava, "whichBoard": req.params.whichBoard}, function(err, theboard) {
+            // BoardState.find({}, function(err, theboard) {
                 if(err) {
                     console.log(err);
                     //res.render('errors', {title: 'you have errors!', errors: boardstate.err});
                 } else {
-                    console.log('boardstate =',theboard);
+                    //console.log('boardstate =',theboard);
                     res.json(theboard); //<-- think we change this
                 }
             });
