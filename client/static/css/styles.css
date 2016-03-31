@@ -1,1 +1,52 @@
-/*placeholder*/
+body {
+	margin: 0;
+	padding: 0;
+	display:block;
+	background-color: #27556C;
+	color: #919293;
+}
+nav {
+	background: #002E45;
+}
+.logout a {
+	margin: 20px;
+	text-decoration: none;
+	color: #919293;
+}
+a:hover {
+	color: #56727F;
+}
+.navbar-brand  {
+	font-family: 'Teko', sans-serif;
+
+}
+.logo {
+	color: #56727F;
+	text-shadow: 2px 2px #919293;
+	font-size: 50px;
+	font-weight: 600;
+}
+.main {
+	margin: 0 auto;
+}
+.left_player-board {
+	margin: 20px;
+	width: 450px;
+	height: 450px;
+	background: #002E45;
+	display: inline-block;
+}
+.right_player-board {
+	margin: 20px;
+	width: 450px;
+	height: 450px;
+	background: #002E45;
+	display: inline-block;
+}
+.chat {
+	min-width: 200px;
+	height: 450px;
+	margin: 20px;
+	background: #919293;
+	display: inline-block;
+}
