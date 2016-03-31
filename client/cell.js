@@ -47,7 +47,7 @@ myapp.controller('editorController', function ($scope) {
 
     function makeSizes() {
         for (var i = 0; i < 5; i++) {
-            $scope.sizes.push(i + 3);
+            $scope.sizes.push(i + 10);
         }
     }
 
