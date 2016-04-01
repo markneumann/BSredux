@@ -9,18 +9,12 @@
 		<script src="static/js/angular.js"></script>
 		<script src="static/js/angular-route.js"></script>
 		<script src="static/js/bootstrap.js"></script>
-		<script src="/static/app.js"></script>
-		<script src="/static/angular/factories/c_board_factory.js"></script>
-		<script src="/static/angular/controllers/c_board_controller.js"></script>
+		<script src="static/app.js"></script>
+		<script src="static/angular/factories/c_board_factory.js"></script>
+		<script src="static/angular/controllers/c_board_controller.js"></script>
 		<link rel="stylesheet" href="static/css/styles.css" media="screen" title="no title" charset="utf-8">
-
-		<!-- Commented out this one to use the c_board_controller below that connects to the server -->
-		<!-- <script type="text/javascript" src="static/angular/boardController.js"></script> -->
-
-
-
 	</head>
-	<body ng-app>
+	<body>
 		<div class="container-fluid">
 			<nav class="navbar navbar-inverted">
 				<div class="container-fluid">
@@ -32,14 +26,14 @@
 					</ul>
 				</div>
 			</nav>
-			<div class="main">
-				<div class="left_player-board col-md-5-left" ng-controller="BoardController">
+			<div class="main" ng-app="" >
+				<div class="left_player-board col-md-5-left" ng-view="">
 
 				</div>
 				<div class="chat col-mid-2">
 
 				</div>
-				<div class="right_player-board col-md-5-right" >
+				<div class="right_player-board col-md-5-right"  >
 
 				</div>
 			</div>
