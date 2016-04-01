@@ -3,15 +3,15 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Battleship</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="static/css/bootstrap.css">
+		<link rel="stylesheet" href="static/css/bootstrap-theme.css">
+		<script src="static/js/jquery.js"></script>
+		<script src="static/js/angular.js"></script>
+		<script src="static/js/angular-route.js"></script>
+		<script src="static/js/bootstrap.js"></script>
 		<script src="/static/app.js"></script>
 		<script src="/static/angular/factories/c_board_factory.js"></script>
 		<script src="/static/angular/controllers/c_board_controller.js"></script>
-		<!-- <link href='https://fonts.googleapis.com/css?family=Teko:400,700' rel='stylesheet' type='text/css'> -->
 		<link rel="stylesheet" href="static/css/styles.css" media="screen" title="no title" charset="utf-8">
 
 		<!-- Commented out this one to use the c_board_controller below that connects to the server -->
@@ -20,7 +20,7 @@
 
 
 	</head>
-	<body>
+	<body ng-app>
 		<div class="container-fluid">
 			<nav class="navbar navbar-inverted">
 				<div class="container-fluid">
@@ -32,17 +32,17 @@
 					</ul>
 				</div>
 			</nav>
-			<div class="main" ng-app="app" ng-controller="BoardController">
-				<div class="left_player-board col-md-5-left">
+			<div class="main">
+				<div class="left_player-board col-md-5-left" ng-controller="BoardController">
 
-			</div>
+				</div>
 				<div class="chat col-mid-2">
 
 				</div>
 				<div class="right_player-board col-md-5-right" >
 
-					</div>
 				</div>
+			</div>
 		</div>		<!-- end of container -->
 	</body>
 </html>

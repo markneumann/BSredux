@@ -16,6 +16,7 @@ BSModule.controller('BoardController', function($scope, BoardFactory) {
        0,0,0,0,0,0,0,0,0,0,
        0,0,0,0,0,0,0,0,0,0];
     //$scope.errorArea = {};
+
     BoardFactory.index(function(data) {
         console.log("BoardFactory.index", data);
         console.log('data =', data);
