@@ -4,6 +4,13 @@ var BoardState = require('../app/controller/BoardState_controller.js');
 
 module.exports = function(app, passport) {
 
+    // BoardState ==============================
+    app.get('/board', function(req, res) {
+        console.log('/board path');
+        res.redirect('index.html');
+        // res.render('indexb.ejs');
+    });
+
     // Battleship routes ===========================================================
 
     app.get('/boardstate/new/:ava/:whichBoard', BoardState.new_board); //Save a new board
@@ -15,7 +22,7 @@ module.exports = function(app, passport) {
     // normal routes ===============================================================
 
     // show the home page (will also have our login links)
-    app.get('/', function(req, res) {
+    app.get('/login', function(req, res) {
         res.render('index.ejs');
     });
 
