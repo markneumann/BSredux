@@ -4,6 +4,13 @@ var BoardState = require('../app/controller/BoardState_controller.js');
 
 module.exports = function(app, passport) {
 
+    // LOGOUT ==============================
+    app.get('/board', function(req, res) {
+        console.log('/board path');
+        res.redirect('index.html');
+        // res.render('indexb.ejs');
+    });
+
     // Battleship routes ===========================================================
 
     app.get('/boardstate/new/:ava/:whichBoard', BoardState.new_board); //Save a new board

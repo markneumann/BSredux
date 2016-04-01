@@ -99,19 +99,7 @@ module.exports = (function() {
 //                 res.json({error: err});
 //             });
 //         },
-// //
-//         // remove_question:  function(req, res){
-//         //     console.log("--> remove question path");
-//         //     console.log(req.params);
-//         //     BoardState.remove({_id: req.params.id}, function(err, boardstate) {
-//         //         if(err) {
-//         //             console.log(err);
-//         //             //res.render('errors', {title: 'you have errors!', errors: name.errors});
-//         //         } else {
-//         //             res.redirect('/boardstate');
-//         //         }
-//         //     });
-//         // },
+
 //
 
     };
