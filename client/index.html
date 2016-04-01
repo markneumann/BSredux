@@ -8,12 +8,9 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-
 		<script src="/static/app.js"></script>
 		<script src="/static/angular/factories/c_board_factory.js"></script>
 		<script src="/static/angular/controllers/c_board_controller.js"></script>
-
 		<!-- <link href='https://fonts.googleapis.com/css?family=Teko:400,700' rel='stylesheet' type='text/css'> -->
 		<link rel="stylesheet" href="static/css/styles.css" media="screen" title="no title" charset="utf-8">
 
@@ -37,31 +34,13 @@
 			</nav>
 			<div class="main" ng-app="app" ng-controller="BoardController">
 				<div class="left_player-board col-md-5-left">
-					<table >
-						<tbody >
-							<tr class="row" ng-repeat="row in cells track by $index" ng-if="$index%10==0">
-								<td class="cell" ng-repeat="i in [$index,$index+1,$index+2,$index+3, $index+4,$index+5,$index+6, $index+7, $index+8, $index+9]"
-								ng-if="cells[i]!=null">
-								{{cells[i]}}
-							</td>
-						</tr>
-					</tbody>
-				</table>
+
 			</div>
 				<div class="chat col-mid-2">
 
 				</div>
 				<div class="right_player-board col-md-5-right" >
-					<table >
-						<tbody >
-							<tr class="row" ng-repeat="row in cells track by $index" ng-if="$index%10==0">
-								<td class="cell" ng-repeat="i in [$index,$index+1,$index+2,$index+3, $index+4,$index+5,$index+6, $index+7, $index+8, $index+9]"
-								ng-if="cells[i]!=null">
-								{{cells[i]}}
-							</td>
-						</tr>
-					</tbody>
-				</table>
+
 					</div>
 				</div>
 		</div>		<!-- end of container -->
