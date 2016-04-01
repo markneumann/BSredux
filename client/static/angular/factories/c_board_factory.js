@@ -1,6 +1,6 @@
 console.log('loading c_board_factory');
-// create the NameFactory
-console.log('BSModule',BSModule);
+// create the BoardFactory
+// console.log('BSModule',BSModule);
 BSModule.factory('BoardFactory', function($http) {
     var factory = {};
     var cells = [];

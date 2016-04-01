@@ -2,7 +2,7 @@ var app = angular.module('app', []);
 
 
 
-app.controller('appCtrl',function($scope){
+app.controller('BoardController',function($scope){
 
 	$scope.cells =
   	  [0,0,0,0,0,0,0,0,0,0,

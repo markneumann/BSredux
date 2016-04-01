@@ -8,14 +8,19 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-		<!-- <link href='https://fonts.googleapis.com/css?family=Teko:400,700' rel='stylesheet' type='text/css'> -->
-		<link rel="stylesheet" href="static/css/styles.css" media="screen" title="no title" charset="utf-8">
-			<script type="text/javascript" src="static/angular/boardController.js"></script>
 
 
 		<script src="/static/app.js"></script>
 		<script src="/static/angular/factories/c_board_factory.js"></script>
 		<script src="/static/angular/controllers/c_board_controller.js"></script>
+
+		<!-- <link href='https://fonts.googleapis.com/css?family=Teko:400,700' rel='stylesheet' type='text/css'> -->
+		<link rel="stylesheet" href="static/css/styles.css" media="screen" title="no title" charset="utf-8">
+
+		<!-- Commented out this one to use the c_board_controller below that connects to the server -->
+		<!-- <script type="text/javascript" src="static/angular/boardController.js"></script> -->
+
+
 
 	</head>
 	<body>
@@ -30,7 +35,7 @@
 					</ul>
 				</div>
 			</nav>
-			<div class="main" ng-app="app" ng-controller="appCtrl">
+			<div class="main" ng-app="app" ng-controller="BoardController">
 				<div class="left_player-board col-md-5-left">
 					<table >
 						<tbody >
