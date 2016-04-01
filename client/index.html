@@ -14,7 +14,7 @@
 		<script src="static/angular/controllers/c_board_controller.js"></script>
 		<link rel="stylesheet" href="static/css/styles.css" media="screen" title="no title" charset="utf-8">
 	</head>
-	<body>
+	<body ng-app="app" >
 		<div class="container-fluid">
 			<nav class="navbar navbar-inverted">
 				<div class="container-fluid">
@@ -26,15 +26,15 @@
 					</ul>
 				</div>
 			</nav>
-			<div class="main" ng-app="" >
-				<div class="left_player-board col-md-5-left" ng-view="">
-
+			<div class="main" ng-controller="BoardController">
+				<div class="left_player-board col-md-5-left" ng-include="'partials/left_gameboard.html'" >
+						{{cells}}
 				</div>
 				<div class="chat col-mid-2">
 
 				</div>
-				<div class="right_player-board col-md-5-right"  >
-
+				<div class="right_player-board col-md-5-right"  ng-include="'partials/right_gameboard.html'">
+						{{cells}}
 				</div>
 			</div>
 		</div>		<!-- end of container -->

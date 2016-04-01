@@ -5,15 +5,6 @@ console.log('loading app.js');
 // var BSModule = angular.module('app', ['ngRoute']);
 var BSModule = angular.module('app', ['ngRoute']);
 
-.controller('BoardController1', function($scope, $routeParams) {
-    $scope.name = "BookController1";
-    $scope.params = $routeParams;
-})
-
-.controller('BoardController2', function($scope, $routeParams) {
-    $scope.name = "BoardController2";
-    $scope.params = $routeParams;
-})
 
 console.log('BSModule = ', BSModule);
 // the .controller() method adds a controller to the module
