@@ -4,7 +4,7 @@ var BoardState = require('../app/controller/BoardState_controller.js');
 
 module.exports = function(app, passport) {
 
-    // LOGOUT ==============================
+    // BoardState ==============================
     app.get('/board', function(req, res) {
         console.log('/board path');
         res.redirect('index.html');
@@ -22,7 +22,7 @@ module.exports = function(app, passport) {
     // normal routes ===============================================================
 
     // show the home page (will also have our login links)
-    app.get('/', function(req, res) {
+    app.get('/login', function(req, res) {
         res.render('index.ejs');
     });
 
